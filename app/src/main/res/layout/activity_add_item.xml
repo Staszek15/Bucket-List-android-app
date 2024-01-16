@@ -22,7 +22,7 @@
             app:cardCornerRadius="16dp">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/image_add"
+                android:id="@+id/image_view_add"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@color/teal_200"
@@ -31,11 +31,25 @@
         </androidx.cardview.widget.CardView>
 
 
+        <RatingBar
+            android:contentDescription="Stars rating bar. Max is 5."
+            android:id="@+id/rating_bar"
+            style="@style/Widget.AppCompat.RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:isIndicator="false"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
+            tools:rating="3.5f" />
+
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="14dp"
             android:hint="Title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,16 +77,17 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_text_record"
+                android:id="@+id/edit_text_description"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="top"
                 android:inputType="textMultiLine"
-                tools:text="Description"
-                android:gravity="top"/>
+                tools:text="Description" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
