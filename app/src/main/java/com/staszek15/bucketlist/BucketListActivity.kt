@@ -1,5 +1,6 @@
 package com.staszek15.bucketlist
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,14 @@ class BucketListActivity : AppCompatActivity() {
         binding = ActivityBucketListBinding.inflate(layoutInflater)
         setContentView(binding.root)
         createRecyclerView()
+        fab()
+    }
+
+    private fun fab() {
+        binding.fab.setOnClickListener {
+            val intent = Intent(this, AddItemActivity()::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun createBucketList(listType: String): List<BucketListItem> {
